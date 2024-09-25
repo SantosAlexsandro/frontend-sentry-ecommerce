@@ -11,7 +11,7 @@ import { useTheme, useMediaQuery } from "@mui/material";
 
 export default function TemporaryDrawer({ children }) {
   const theme = useTheme();
-  const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+  const smDown = useMediaQuery(theme.breakpoints.down("sm"));
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -19,17 +19,25 @@ export default function TemporaryDrawer({ children }) {
   };
 
   const DrawerList = (
-    <Box sx={{ width: 250 }}>
+    <Box sx={{ width: 220 }}>
       <List>
         {[
-          "Ofertas",
-          "Feminino",
-          "Masculino",
-          "Infantil",
-          "Calçados",
-          "Esportivo",
-          "Eletrônicos",
-          "jeans",
+          "Hardware",
+          "Periféricos",
+          "Computadores",
+          "Games",
+          "Celular & Smartphone",
+          "Celular & Telefone",
+          "TV",
+          "Áudio",
+          "Projetores",
+          "Espaço Gamer",
+          "Escritório",
+          "Casa Inteligente",
+          "Câmeras e Drones",
+          "Energia",
+          "Conectividade",
+          "Geek",
         ].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
@@ -43,7 +51,7 @@ export default function TemporaryDrawer({ children }) {
 
   return (
     <>
-      <Drawer open={open}   variant={smDown ? 'temporary': 'permanent'}>
+      <Drawer open={open} variant={smDown ? "temporary" : "permanent"}>
         <Box
           width={theme.spacing(28)}
           height="100%"

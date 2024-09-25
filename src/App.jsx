@@ -4,6 +4,7 @@ import TemporaryDrawer from "./shared/components/left-drawer/left-drawer.tsx";
 import CssBaseline from "@mui/material/CssBaseline";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home.tsx";
+import ProductDetails from "./pages/home/ProductDetails.jsx";
 
 // const Home = () => <h1>Home Page Teste</h1>;
 const About = () => <h1>About Page</h1>;
@@ -17,6 +18,7 @@ function App() {
         <TemporaryDrawer>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

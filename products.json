@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Notebook Gamer Acer",
+    "description": " Acer Nitro V15 Intel ",
+    "imageUrl": "https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F564916%2Fnotebook-gamer-acer-nitro-v15-intel-core-i5-13420h-8gb-ram-geforce-rtx-3050-ssd-512gb-15-6-fhd-ips-144hz-windows-11-preto-anv15-51-58az_1715197002_g.jpg&w=640&q=100"
+  },
+  {
+    "id": 2,
+    "name": "Notebook Gamer ASUS",
+    "description": "Asus TUF Gaming F15 FX507VU",
+    "imageUrl": "https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F518061%2Fnotebook-gamer-asus-tuf-gaming-f15-fx507vu-intel-core-i7-13620h-rtx-4050-8gb-ram-ssd-512gb-15-6-led-fhd-144hz-keepos-fx507vu-lp151_1712001146_g.jpg&w=640&q=100"
+  },
+  {
+    "id": 3,
+    "name": "Notebook Gamer Dell G15",
+    "description": "Intel Core i5-13450HX, 8GB RAM",
+    "imageUrl": "https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages.kabum.com.br%2Fprodutos%2Ffotos%2F598833%2Fnotebook-gamer-dell-g15-i1300-a25p-intel-core-i5-8gb-ram-nvidia-rtx-3050-ssd-512gb-15-6-full-hd-windows-11-preto_1721932519_g.jpg&w=640&q=100"
+  }
+]
