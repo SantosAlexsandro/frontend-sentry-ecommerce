@@ -1,47 +1,42 @@
-import * as React from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { useTheme, useMediaQuery } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function TemporaryDrawer({ children }) {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down("sm"));
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(!smDown); // Mantém aberto em telas maiores
 
-  const toggleDrawer = (newOpen: boolean) => () => {
+  const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+
+  const menuItems = [
+    { text: "Home", path: "/" },
+    { text: "About", path: "/about" },
+    { text: "Hardware", path: "/category/hardware" },
+    { text: "Periféricos", path: "/category/perifericos" },
+    // Adicione mais itens aqui conforme necessário
+  ];
 
   const DrawerList = (
     <Box sx={{ width: 220 }}>
       <List>
-        {[
-          "Hardware",
-          "Periféricos",
-          "Computadores",
-          "Games",
-          "Celular & Smartphone",
-          "Celular & Telefone",
-          "TV",
-          "Áudio",
-          "Projetores",
-          "Espaço Gamer",
-          "Escritório",
-          "Casa Inteligente",
-          "Câmeras e Drones",
-          "Energia",
-          "Conectividade",
-          "Geek",
-        ].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemText primary={text} />
+        {menuItems.map((item) => (
+          <ListItem key={item.text} disablePadding>
+            <ListItemButton
+              component={Link}
+              to={item.path}
+              onClick={smDown ? toggleDrawer(false) : undefined} // Fecha o drawer em telas menores
+            >
+              <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -51,19 +46,36 @@ export default function TemporaryDrawer({ children }) {
 
   return (
     <>
-      <Drawer open={open} variant={smDown ? "temporary" : "permanent"}>
-        <Box
-          width={theme.spacing(28)}
-          height="100%"
-          display="flex"
-          flexDirection="column"
-        >
-          <Button onClick={toggleDrawer(true)}>Open drawer</Button>
-          {DrawerList}
-        </Box>
+      <Drawer
+        open={open}
+        onClose={toggleDrawer(false)}
+        variant={smDown ? "temporary" : "permanent"}
+        sx={{
+          "& .MuiDrawer-paper": {
+            width: theme.spacing(28),
+            boxSizing: "border-box",
+          },
+        }}
+      >
+        {DrawerList}
       </Drawer>
-      <Box height="100vh" marginLeft={smDown ? 0 : theme.spacing(28)}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          ml: smDown ? 0 : theme.spacing(28), // Ajusta o conteúdo ao drawer
+          p: 2,
+        }}
+      >
         {children}
+        {smDown && (
+          <Button
+            variant="contained"
+            onClick={toggleDrawer(true)}
+            sx={{ position: "fixed", top: 16, left: 16 }}
+          >
+            Menu
+          </Button>
+        )}
       </Box>
     </>
   );

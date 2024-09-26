@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import products from '../../../products.json'
+import products from "../../../products.json";
 import { useParams, Link } from "react-router-dom";
 import {
   Container,
@@ -32,9 +32,9 @@ function ProductDetails() {
             sx={{
               width: "100%",
               height: "auto",
-              maxHeight: "300px", // Define uma altura máxima
-              objectFit: "contain", // Contain garante que a imagem se ajuste sem cortar
-              objectPosition: "center", // Centraliza a imagem dentro do container
+              maxHeight: "300px",
+              objectFit: "contain",
+              objectPosition: "center",
             }}
           />
           <CardContent>
@@ -47,13 +47,12 @@ function ProductDetails() {
               to="/"
               variant="contained"
               color="primary"
-              style={{ marginTop: "20px" }}
+              sx={{ mt: 2 }}
             >
               Voltar à Lista
             </Button>
           </CardContent>
         </Card>
-        <Card>Descrição do Produto</Card>
       </Container>
     </BaseLayout>
   );

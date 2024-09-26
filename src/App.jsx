@@ -6,15 +6,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home.tsx";
 import ProductDetails from "./pages/home/ProductDetails.jsx";
 
-// const Home = () => <h1>Home Page Teste</h1>;
 const About = () => <h1>About Page</h1>;
 const NotFound = () => <h1>404 - Not Found</h1>;
 
 function App() {
   return (
     <ThemeProvider theme={LightTheme}>
-      <CssBaseline /> {/* Normaliza o CSS para o tema */}
+      <CssBaseline />
       <Router>
+        {/* Drawer para navegação geral */}
         <TemporaryDrawer>
           <Routes>
             <Route path="/" element={<Home />} />

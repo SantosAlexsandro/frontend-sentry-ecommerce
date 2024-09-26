@@ -3,7 +3,13 @@ import { Box } from "@mui/material";
 import "./slider.css";
 
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -12,6 +18,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "swiper/css/autoplay"; // Importando os estilos de autoplay
 
 const data = [
   {
@@ -35,12 +42,16 @@ export const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
     <>
       <Swiper
         // install Swiper modules
-        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         spaceBetween={50}
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
+        autoplay={{
+          delay: 3000, // tempo em milissegundos antes de mudar para o próximo slide
+          disableOnInteraction: false, // não desabilita o autoplay após interação do usuário
+        }}
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
@@ -48,9 +59,7 @@ export const BaseLayout: React.FC<BaseLayoutProps> = ({ children }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <Box>
-      {children}
-      </Box>
+      <Box>{children}</Box>
     </>
   );
 };
