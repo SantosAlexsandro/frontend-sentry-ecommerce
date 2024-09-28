@@ -20,9 +20,25 @@ export default function TemporaryDrawer({ children }) {
 
   const menuItems = [
     { text: "Home", path: "/" },
-    { text: "About", path: "/about" },
+    { text: "Sobre Nós", path: "/about" },
     { text: "Hardware", path: "/category/hardware" },
     { text: "Periféricos", path: "/category/perifericos" },
+    { text: "Notebooks", path: "/category/notebooks" },
+    { text: "Desktops", path: "/category/desktops" },
+    { text: "Monitores", path: "/category/monitores" },
+    { text: "Componentes", path: "/category/componentes" },
+    { text: "Placas de Vídeo", path: "/category/placas-de-video" },
+    { text: "Processadores", path: "/category/processadores" },
+    { text: "Memória RAM", path: "/category/memoria-ram" },
+    { text: "Armazenamento", path: "/category/armazenamento" },
+    { text: "Rede", path: "/category/rede" },
+    { text: "Smartphones", path: "/category/smartphones" },
+    { text: "Tablets", path: "/category/tablets" },
+    { text: "Gaming", path: "/category/gaming" },
+    { text: "Acessórios", path: "/category/acessorios" },
+    { text: "Promoções", path: "/category/promocoes" },
+    { text: "Novidades", path: "/category/novidades" },
+    { text: "Contato", path: "/contact" },
     // Adicione mais itens aqui conforme necessário
   ];
 

@@ -2,11 +2,11 @@ import * as React from "react";
 import { BaseLayout } from "../../shared/layouts/baseLayout/BaseLayout";
 import { BasePromoNinjaUltimate } from "../../shared/layouts/basePromoNinjaUltimate/BasePromoNinjaUltimate";
 
-interface HomeProps {
+interface ProductsListProps {
   children?: React.ReactNode;
 }
 
-const Home: React.FC<HomeProps> = ({ children }) => {
+const ProductsList: React.FC<ProductsListProps> = ({ children }) => {
   return (
     <BaseLayout>
       <BasePromoNinjaUltimate />
@@ -14,4 +14,4 @@ const Home: React.FC<HomeProps> = ({ children }) => {
   );
 };
 
-export default Home;
+export default ProductsList;
